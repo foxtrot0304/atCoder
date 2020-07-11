@@ -6,32 +6,25 @@ public class Main {
     Scanner scan = new Scanner(System.in);
     String str = scan.nextLine();
     var N = Integer.parseInt(str);
-    int ans = 0;
+    // 10 の 4乗までだけど、余裕を持たせる
+    int ans[] = new int[10050];
     double x,y,z;
     int a;
     double b;
 
-    for (var i = 1;i <= N;i++) {
-      ans = 0;
-      a = (int)Math.sqrt(N);
-
-      if (a*a == N) {
-	a--;
-      } 
-
-      for (x = 1; x <= a; x++){
-        for (y = 1; y <= a; y++){
-          for (z = 1; z <= a; z++){
-	     b = Math.pow(x,2)+Math.pow(y,2)+Math.pow(z,2)+(x*y)+(y*z)+(z*x);
-	     if( (int)b == i ){
-		     ans++;
-	     }
-	  }
-	}
+    for (x = 1; x <= 105; x++){
+      for (y = 1; y <= 105; y++){
+        for (z = 1; z <= 105; z++){
+           b = Math.pow(x,2)+Math.pow(y,2)+Math.pow(z,2)+(x*y)+(y*z)+(z*x);
+           if( (int)b < 10050 ){
+      	     ans[(int)b-1]++;
+           }
+        }
       }
+    }
 
-
-      System.out.println(ans);
+    for (var i = 0;i < N;i++) {
+      System.out.println(ans[i]);
     }
 
     scan.close();
