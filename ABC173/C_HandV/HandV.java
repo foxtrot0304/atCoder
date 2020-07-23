@@ -29,7 +29,7 @@ public class Main {
 	    for (var m = 0; m < H; m++){
 	      for (var n = 0; n < W; n++){
 	        if (((mask_row >> m) & 1) == 0  && ((mask_line >> n) & 1) == 0 ){
-              if (str[m][n].equals('#')) {
+              if (str[m][n].equals("#")) {
 	            black_cnt++;
 	          }
 	        }
