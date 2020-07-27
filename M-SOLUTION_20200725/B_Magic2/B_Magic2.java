@@ -11,7 +11,7 @@ public class Main {
     var B = Integer.parseInt(str[1]);
     var C = Integer.parseInt(str[2]);
 
-    String ans = "no";
+    String ans = "No";
 
     String k_scan = scan.nextLine();
     var K = Integer.parseInt(k_scan);
@@ -24,16 +24,16 @@ public class Main {
           var Ctmp = C << f;
 
           if ( (Btmp > Atmp)  && (Ctmp > Btmp) ) {
-            ans = "yes";
+            ans = "Yes";
             break;
           }
 
         }
-        if (ans == "yes") {
+        if (ans == "Yes") {
           break;
         }
       }
-      if (ans == "yes") {
+      if (ans == "Yes") {
         break;
       }
     }
