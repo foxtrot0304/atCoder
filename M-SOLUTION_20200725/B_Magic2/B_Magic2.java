@@ -16,14 +16,14 @@ public class Main {
     String k_scan = scan.nextLine();
     var K = Integer.parseInt(k_scan);
 
-    for (var i=0;i<K;i++) {
+    for (var i=0;i<=K;i++) {
       var Atmp = A << i;
-      for (var j=0;j<K;j++) {
+      for (var j=0;j<=K;j++) {
         var Btmp = B << j;
-        for (var f=0;f<K;f++) {
+        for (var f=0;f<=K;f++) {
           var Ctmp = C << f;
 
-          if ( (Btmp > Atmp)  && (Ctmp > Btmp) ) {
+          if ( (Btmp > Atmp)  && (Ctmp > Btmp) && (i+j+f <= K) ) {
             ans = "Yes";
             break;
           }
