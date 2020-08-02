@@ -9,7 +9,11 @@ public class Main {
 
     int ans = 1;
     String seven = "7";
+    String seventmp = "7";
     double sevenDouble = 7;
+    var i = 0;
+    int vallen;
+    int klen = String.valueOf( K ).length();
 
     // 偶数を除外する
     if ( K % 2 == 0 ) {
@@ -24,13 +28,18 @@ public class Main {
 
       while(true) {
 
-        if ( sevenDouble % K == 0 ) { 
-          break;
+        vallen = String.valueOf(sevenDouble).length();
+
+        if ( klen + 1 == vallen ) {
+          if ( sevenDouble % K == 0) {
+            break;
+          }
         }
 
         // 7の連番を生み出す
+        seventmp = seven;
         seven = seven + "7";
-        sevenDouble = Double.parseDouble(seven);
+        sevenDouble = Double.parseDouble(seventmp)-14;
 
         ans++;
 
