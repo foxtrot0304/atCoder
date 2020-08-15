@@ -7,14 +7,30 @@ public class Main {
 
     int ans = 0;
 
-    for ( var i = 0; i < 3; i++ ){
-      String s = str_scan.charAt(i);
-
-      if ( s.equals("R")){
-        ans++;
-      }else{
-        ans = 0;
-      }
+    switch (str_scan) {
+      case "RSS":
+        ans=1;
+        break;
+      case "SRS":
+        ans=1;
+        break;
+      case "RSR":
+        ans=1;
+        break;
+      case "SSR":
+        ans=1;
+        break;
+      case "SRR":
+        ans=2;
+        break;
+      case "RRS":
+        ans=2;
+        break;
+      case "RRR":
+        ans=3;
+        break;
+      default:
+        ans=0;
     }
 
     System.out.println(ans);
