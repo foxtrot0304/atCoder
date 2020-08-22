@@ -7,20 +7,20 @@ public class Main {
     String str_scan = scan.nextLine();
 
     BigDecimal N = new BigDecimal(str_scan);
-    var ans = "no";
+    var ans = "No";
     double amari = 0;
     double sum = 0;
     int keta = 0;
 
-    keta = N.precision(); 
+    keta = N.precision();
     char[] work = new char[keta];
 
-    for(var i = 0; i < N; i++){
-      sum + = Double.parseDouble(str_scan.charAt(i));
+    for(var i = 0; i < keta; i++){
+      sum += Double.parseDouble(String.valueOf(str_scan.charAt(i)));
     }
 
     if ( (sum % 9) == 0 ) {
-      ans = "yes";
+      ans = "Yes";
     }
 
     System.out.println(ans);
