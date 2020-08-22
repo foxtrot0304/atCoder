@@ -1,22 +1,30 @@
 import java.util.Scanner;
+import java.math.BigInteger;
 
 public class Main {
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     String str_scan = scan.nextLine();
-    double N = Double.parseDouble(str_scan);
-    var ans = "no";
-    double amari = 0;
-    double sum = 0;
+    BigInteger N = new BigInteger(str_scan);
+    var ans = "No";
+    BigInteger amari,sum,ten,zero,keisan,nine;
+    sum = BigInteger.ZERO;
+    amari = BigInteger.ZERO;
+    ten = BigInteger.TEN;
+    zero = BigInteger.ZERO;
+    nine = new BigInteger("9");
 
-    while(N > 0){
-      amari = N % 10;
-      sum += amari;
-      N = N / 10;
+
+    while( (N.compareTo(zero)) > 0){
+      amari = N.remainder(ten);
+      sum = sum.add(amari);
+      N = N.divide(ten);
     }
 
-    if ( (sum % 9) == 0 ) {
-      ans = "yes";
+    keisan = sum.remainder(nine);
+
+    if ( (keisan.compareTo(zero)) == 0 ) {
+      ans = "Yes";
     }
 
     System.out.println(ans);
