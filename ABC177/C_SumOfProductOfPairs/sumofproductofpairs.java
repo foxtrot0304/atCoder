@@ -11,21 +11,25 @@ public class Main {
     // スペース区切りで分ける
     var A = str_scan2.split(" ");
     long[] work = new long[N];
+    long base_sum = 0;
 
-    //long型に変換
+    //long型に変換&&基本の和を求める
     for (var x = 0;x < N;x++){
       work[x] = Long.parseLong(A[x]);
+      base_sum += work[x];
     }
 
-    var k = 0;
     long ans = 0;
 
     long MOD = 1000000007;
 
-    for (var i = 0;i<N-1;i++){
-      for ( var j = i+1;j<N;j++){
-        ans += (work[i] * work[j]) % MOD;
-      }
+    long sum = 0;
+    long hiku = 0;
+
+    for (var i = 0;i < N-1;i++){
+      hiku += work[i];
+      sum = base_sum - hiku;
+      ans += work[i] * sum % MOD;
     }
 
     ans %= MOD;
