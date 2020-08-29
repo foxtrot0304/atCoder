@@ -28,6 +28,8 @@ public class Main {
       }
     }
 
+    ans %= MOD;
+
     System.out.println(ans);
     scan.close();
   }
