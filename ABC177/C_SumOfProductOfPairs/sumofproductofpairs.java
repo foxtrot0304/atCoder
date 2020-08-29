@@ -12,18 +12,21 @@ public class Main {
     var A = str_scan2.split(" ");
     long[] work = new long[N];
     long base_sum = 0;
+    long MOD = 1000000007;
+    long ans = 0;
 
     //long型に変換&&基本の和を求める
     for (var x = 0;x < N;x++){
       work[x] = Long.parseLong(A[x]);
       base_sum += work[x];
+      base_sum %= MOD;
     }
-
-    long ans = 0;
-    long MOD = 1000000007;
 
     for (var i = 0;i < N-1;i++){
       base_sum -= work[i];
+      if (base_sum < 0){
+        base_sum += MOD;
+      }
       ans += (work[i] * base_sum) % MOD;
     }
 
