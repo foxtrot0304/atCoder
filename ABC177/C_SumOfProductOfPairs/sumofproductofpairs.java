@@ -20,16 +20,11 @@ public class Main {
     }
 
     long ans = 0;
-
     long MOD = 1000000007;
 
-    long sum = 0;
-    long hiku = 0;
-
     for (var i = 0;i < N-1;i++){
-      hiku += work[i];
-      sum = base_sum - hiku;
-      ans += work[i] * sum % MOD;
+      base_sum -= work[i];
+      ans += (work[i] * base_sum) % MOD;
     }
 
     ans %= MOD;
