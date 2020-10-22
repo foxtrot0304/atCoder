@@ -7,12 +7,14 @@ public class Main {
     // スペース区切りで分ける
     var str = str_scan.split(" ");
     // int型へ変換
-    var ans = Integer.parseInt(str_scan);
+    int num1 = Integer.parseInt(str[0]);
+    int num2 = Integer.parseInt(str[1]);
+    var ans = "hoge";
 
-    // 連続したN個の行列を取り出すとき
-    String[] D = new String[N];
-    for(var i=0;i < N;i++){
-      D[j] = scan.nextLine();
+    if ( ((num1 * num2) % 2 ) == 1) {
+      ans = "Odd";
+    }else{
+      ans = "Even";
     }
 
     System.out.println(ans);
